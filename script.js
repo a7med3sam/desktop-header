@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalTitle = document.getElementById("modal-title");
   const modalCategories = document.getElementById("modal-categories");
   const menuToggle = document.querySelector(".mobile-menu-toggle");
+  const closeBtnNav = document.getElementById("close-btn-nav");
   const navLinks = document.querySelector(".nav-links");
   const body = document.body;
   const searchInput = document.getElementById("search-input");
@@ -12,6 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
+    
+  });
+
+  closeBtnNav.addEventListener("click", () => {
+    navLinks.classList.remove("active"); // إزالة الكلاس "active" لإخفاء القائمة
   });
 
   closeBtn.addEventListener("click", () => {

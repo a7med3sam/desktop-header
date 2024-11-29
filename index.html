@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -40,20 +41,25 @@
 
         <button class="mobile-menu-toggle" aria-label="Toggle Menu">
           &#9776;
+        
         </button>
-
+        
+        
         <ul class="nav-links">
           <!--  -->
+          <button id="close-btn-nav" class="close-btn-nav">&times;</button>
 
-          <li class="has-arrow">
-            <a href="#">ON-DEMAND</a>
+          <li class="has-arrow spaceing">
+            <a href="#">ON-DEMAND
+              <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            </a>
             <ul class="on-demand-dropdown">
               <div class="dropdown-section">
                 <!-- القسم 1 -->
                 <li><a href="https://www.eternityready.com/category.php">Browse Categories</a></li>
                 <li><a href="https://www.eternityready.com/newvideos.php">New</a></li>
                 <li><a href="https://www.eternityready.com/topvideos.php">Popular</a></li>
-                <li class="has-arrow vertizontal">
+                <li class="has-right-arrow vertizontal">
                   <a href="https://www.eternityready.com/category.php?cat=movies">Movies</a>
                   <ul class="vertizontal-dropdown">
                     <li><a href="https://www.eternityready.com/category.php?cat=documentaries">Documentaries</a></li>
@@ -61,7 +67,7 @@
                     <li><a href="https://www.eternityready.com/category.php?cat=short-movie">Short Movie</a></li>
                   </ul>
                 </li>
-                <li class="has-arrow vertizontal">
+                <li class="has-right-arrow vertizontal">
                   <a href="https://www.eternityready.com/category.php?cat=bible">Bible</a>
               
                   <ul class="vertizontal-dropdown">
@@ -71,7 +77,7 @@
             
                 <li><a href="https://www.eternityready.com/category.php?cat=documentary-drama">Docudrama</a></li>
 
-                <li class="has-arrow vertizontal">
+                <li class="has-right-arrow vertizontal">
                   <a href="https://www.eternityready.com/category.php?cat=language" >Language</a>
                   <ul class="vertizontal-dropdown">
                   <li class=""><a href="https://www.eternityready.com/category.php?cat=hebrew" class="">Hebrew</a>	</li>
@@ -84,7 +90,7 @@
                 <li><a href="https://www.eternityready.com/category.php?cat=marriage">Marriage</a></li>
                 <li><a href="https://www.eternityready.com/category.php?cat=reality-tv-shows">Reality TV Shows</a></li>
                 <li><a href="https://www.eternityready.com/category.php?cat=islam">Islam</a></li>
-                <li class="has-arrow vertizontal">
+                <li class="has-right-arrow vertizontal">
                   <a href="#">VertiZontal Life</a>
               
                   <ul class="vertizontal-dropdown">
@@ -100,7 +106,7 @@
                 <!-- القسم 2 -->
                 <li><a href="https://www.eternityready.com/category.php?cat=people-helping-people">People Helping People</a></li>
                 
-                <li class="has-arrow vertizontal">
+                <li class="has-right-arrow vertizontal">
                   <a href="https://www.eternityready.com/category.php?cat=travel">Travel</a>
               
                   <ul class="vertizontal-dropdown">
@@ -132,7 +138,7 @@
                 <li><a href="https://www.eternityready.com/category.php?cat=popularforgaming">Popular For Gaming</a></li>
                 <li><a href="https://www.eternityready.com/category.php?cat=seekingwisdomministries">Seeking Wisdom Ministries</a></li>
                 <li><a href="https://www.eternityready.com/category.php?cat=rapture">Rapture</a></li>
-                <li class="has-arrow vertizontal">
+                <li class="has-right-arrow vertizontal">
                   <a href="https://www.eternityready.com/category.php?cat=bible-study">Bible Study</a>
                   <ul class="vertizontal-dropdown">
                   <li class=""><a href="https://www.eternityready.com/category.php?cat=daniel" class="">Daniel</a>	</li>
@@ -141,10 +147,10 @@
                   </li>
                 <li><a href="https://www.eternityready.com/category.php?cat=documentary">Documentary</a></li>
                 <li><a href="https://www.eternityready.com/category.php?cat=armageddon">Armageddon</a></li>
-                  <li class="has-arrow vertizontal">
+                  <li class="has-right-arrow vertizontal">
     <a href="https://www.eternityready.com/category.php?cat=music">Music Videos</a>
     <ul class="vertizontal-dropdown">
-        <li class="has-arrow vertizontal">
+        <li class="has-right-arrow vertizontal">
         <a href="https://www.eternityready.com/category.php?cat=stellar-music">Stellar Music</a>
         <ul class="vertizontal-dropdown">
     <li class="">
@@ -173,8 +179,10 @@
 
           <!--  -->
           <!--  -->
-          <li class="has-arrow">
-            <a href="#">PODCASTS</a>
+          <li class="has-arrow spaceing">
+            <a href="#">PODCASTS
+              <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            </a>
             <ul class="podcasts-dropdown">
               <li class="visible-xs visible-sm"><a href="https://www.eternityready.com/series.php">Browse Podcasts</a></li>
               <li><a href="https://www.eternityready.com/series.php?s=action">Action</a></li>
@@ -201,7 +209,7 @@
               <li><a href="https://www.eternityready.com/series.php?s=interview">Interview</a></li>
               <li><a href="https://www.eternityready.com/series.php?s=bible">Bible</a></li>
               <li><a href="https://www.eternityready.com/series.php?s=bible-teachings">Bible Teachings</a></li>
-              <li class="has-arrow vertizontal">
+              <li class="has-right-arrow vertizontal">
                 <a href="#">VertiZontal Life</a>
                 <ul class="vertizontal-dropdown">
                   <li class=""><a href="https://www.eternityready.com/series.php?s=student" class="">Student</a>	</li>
@@ -212,15 +220,19 @@
               <li><a href="https://www.eternityready.com/series.php?s=creative-arts">Creative Arts</a></li>
             </ul>
           </li>
-          <li class="has-arrow"><a href="#">TV CHANNELS</a>
+          <li class="has-arrow spaceing"><a href="#">TV CHANNELS
+            <i class="fa-solid fa-chevron-down arrow-icon"></i>
+          </a>
             <ul class="tv-channels-dropdown">
               <li><a href="https://www.eternityready.com/category.php?cat=tvnetworks">All Channels</a></li>
               <li><a href="https://www.eternityready.tv/live-tv">New TV Site</a></li>
             </ul>
           </li>
           <li><a href="https://www.eternityready.com/page.php?p=9">AFFILIATES</a></li>
-          <li class="has-arrow about-us">
-            <a href="#">ABOUT US</a>
+          <li class="has-arrow about-us spaceing">
+            <a href="#">ABOUT US
+              <i class="fa-solid fa-chevron-down arrow-icon"></i>
+            </a>
             <ul class="about-us-dropdown">
               <li><a href="https://donorbox.org/eternity-ready-radio">Donate</a></li>
               <li><a href="https://help.eternityready.com/">Contact &amp; Help</a></li>
@@ -230,8 +242,31 @@
           
         </ul>
         <button class="cta-button">Music | Podcast</button>
-    </div>
+        
+        
+    
+      </div>
     </header>
+
+    <!-- 3 btns -->
+    <div class="button-container">
+      <!-- On Demand Button -->
+      <a class="button on-demand" href="https://www.eternityready.com/category.php" target="_blank">On Demand</a>
+
+
+      <!-- Podcasts Button -->
+      <a class="button podcasts" href="https://www.eternityreadyradio.com/series.php" target="_blank">Podcasts</a>
+
+      <!-- Listen Button -->
+      <a class="button listen"href="https://www.eternityreadyradio.com/series.php" target="_blank">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"></path>
+          </svg>
+          Listen
+      </a>
+  </div>
+
+    <!--  -->
 
     <main>
       <div class="container">
@@ -258,7 +293,7 @@
     <section id="modal-section">
       <div id="modal" class="modal-container hidden">
         <div class="modal-content">
-          <button id="closeBtn" class="close-btn">&times;</button>
+          <button id="closeBtn" class="close-btn-vid">&times;</button>
 
           <div class="left-content">
             <h1 class="title">Watch</h1>
