@@ -507,6 +507,7 @@ header .cta-button a{
     min-width: 360px;
     position: fixed;
     width: 100%;
+    top: 80px;
   }
 
   .button-container a {
