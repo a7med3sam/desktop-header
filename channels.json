@@ -3,55 +3,6 @@
   "Number of channels": 81,
   "channels": [
     {
-      "name": "Gospel Truth TV",
-      "logo": "https://eternityready.tv/static/img/logos_2/1.jpg",
-      "link": "https://eternityready.tv/gospel-truth-tv",
-      "embed": "",
-      "categories": ["Religious", "Christian"]
-    },
-    {
-      "name": "NRB Network",
-      "logo": "https://eternityready.tv/static/img/logos_2/2.jpg",
-      "link": "https://eternityready.tv/nrb-network",
-      "embed": "",
-      "categories": ["Religious", "News", "Christian"]
-    },
-    {
-      "name": "CBN News",
-      "logo": "https://eternityready.tv/static/img/logos_2/3.jpg",
-      "link": "https://eternityready.tv/cbn-news",
-      "embed": "",
-      "categories": ["News", "Christian"]
-    },
-    {
-      "name": "Mission TV",
-      "logo": "https://eternityready.tv/static/img/logos_2/4.jpg",
-      "link": "https://eternityready.tv/mission-tv",
-      "embed": "",
-      "categories": ["Religious", "Mission", "Christian"]
-    },
-    {
-      "name": "Christian Youth Channel",
-      "logo": "https://eternityready.tv/static/img/logos_2/5.jpg",
-      "link": "https://eternityready.tv/christian-youth-channel",
-      "embed": "",
-      "categories": ["Youth", "Religious", "Christian"]
-    },
-    {
-      "name": "Total Living Network",
-      "logo": "https://eternityready.tv/static/img/logos_2/6.jpg",
-      "link": "https://eternityready.tv/total-living-network",
-      "embed": "",
-      "categories": ["Religious", "Lifestyle", "Christian"]
-    },
-    {
-      "name": "The Western Channel",
-      "logo": "https://eternityready.tv/static/img/logos_2/7.jpg",
-      "link": "https://eternityready.tv/the-western-channel",
-      "embed": "",
-      "categories": ["Western", "Lifestyle"]
-    },
-    {
       "name": "KSCE Life! End Times TV",
       "logo": "https://eternityready.tv/static/img/logos_2/8.jpg",
       "link": "https://eternityready.tv/ksce-life-end-times-tv",
@@ -80,13 +31,6 @@
       "categories": ["Religious", "Christian"]
     },
     {
-      "name": "ICFN",
-      "logo": "https://eternityready.tv/static/img/logos_2/12.jpg",
-      "link": "https://eternityready.tv/icfn",
-      "embed": "",
-      "categories": ["Religious", "International", "Christian"]
-    },
-    {
       "name": "MNN SPIRIT CHANNEL",
       "logo": "https://eternityready.tv/static/img/logos_2/13.jpg",
       "link": "https://eternityready.tv/mnn-spirit-channel",
@@ -99,6 +43,13 @@
       "link": "https://eternityready.tv/3abn-russia",
       "embed": "",
       "categories": ["Religious", "Russian", "Christian"]
+    },
+    {
+      "name": "Ihop (24/7 Prayer & Worship)",
+      "logo": "https://eternityready.tv/static/img/logos_2/74.jpg",
+      "link": "",
+      "embed": "",
+      "categories": ["Religious", "Christian"]
     },
     {
       "name": "SAT7 PARS",
@@ -281,6 +232,13 @@
       "link": "",
       "embed": "",
       "categories": ["Religious", "Christian"]
+    },
+    {
+      "name": "ICFN",
+      "logo": "https://eternityready.tv/static/img/logos_2/12.jpg",
+      "link": "https://eternityready.tv/icfn",
+      "embed": "",
+      "categories": ["Religious", "International", "Christian"]
     },
     {
       "name": "God Television (Africa- Satellite Live)",
@@ -514,13 +472,6 @@
       "categories": ["Religious", "Christian"]
     },
     {
-      "name": "Ihop (24/7 Prayer & Worship)",
-      "logo": "https://eternityready.tv/static/img/logos_2/74.jpg",
-      "link": "",
-      "embed": "",
-      "categories": ["Religious", "Christian"]
-    },
-    {
       "name": "Believers Voice of Victory",
       "logo": "https://eternityready.tv/static/img/logos_2/75.jpg",
       "link": "",
@@ -568,6 +519,55 @@
       "link": "",
       "embed": "",
       "categories": ["Religious", "Christian"]
+    },
+    {
+      "name": "Gospel Truth TV",
+      "logo": "https://eternityready.tv/static/img/logos_2/1.jpg",
+      "link": "https://eternityready.tv/gospel-truth-tv",
+      "embed": "",
+      "categories": ["Religious", "Christian"]
+    },
+    {
+      "name": "NRB Network",
+      "logo": "https://eternityready.tv/static/img/logos_2/2.jpg",
+      "link": "https://eternityready.tv/nrb-network",
+      "embed": "",
+      "categories": ["Religious", "News", "Christian"]
+    },
+    {
+      "name": "CBN News",
+      "logo": "https://eternityready.tv/static/img/logos_2/3.jpg",
+      "link": "https://eternityready.tv/cbn-news",
+      "embed": "",
+      "categories": ["News", "Christian"]
+    },
+    {
+      "name": "Mission TV",
+      "logo": "https://eternityready.tv/static/img/logos_2/4.jpg",
+      "link": "https://eternityready.tv/mission-tv",
+      "embed": "",
+      "categories": ["Religious", "Mission", "Christian"]
+    },
+    {
+      "name": "Christian Youth Channel",
+      "logo": "https://eternityready.tv/static/img/logos_2/5.jpg",
+      "link": "https://eternityready.tv/christian-youth-channel",
+      "embed": "",
+      "categories": ["Youth", "Religious", "Christian"]
+    },
+    {
+      "name": "Total Living Network",
+      "logo": "https://eternityready.tv/static/img/logos_2/6.jpg",
+      "link": "https://eternityready.tv/total-living-network",
+      "embed": "",
+      "categories": ["Religious", "Lifestyle", "Christian"]
+    },
+    {
+      "name": "The Western Channel",
+      "logo": "https://eternityready.tv/static/img/logos_2/7.jpg",
+      "link": "https://eternityready.tv/the-western-channel",
+      "embed": "",
+      "categories": ["Western", "Lifestyle"]
     }
   ]
 }

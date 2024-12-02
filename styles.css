@@ -38,6 +38,7 @@ header {
   padding: 10px 0;
   transition: all 0.3s ease;
   height: 77px;
+  z-index: 1;
 }
 
 header .container {
@@ -482,6 +483,15 @@ header .cta-button {
   font-weight: bold;
   margin: 11px 9px 0 5px;
   letter-spacing: 0.5px;
+  border: 0;
+}
+
+header .cta-button a{
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  text-decoration: none;
 }
 
 .donate-btn{
@@ -498,7 +508,6 @@ header .cta-button {
     padding: 10px 0;
     min-width: 360px;
     position: fixed;
-    z-index: 2;
     width: 100%;
   }
 
@@ -544,6 +553,7 @@ header .cta-button {
 
   header .cta-button {
     display: none;
+
   }
   .search-section {
     margin-top: 55px;
@@ -699,6 +709,7 @@ header .cta-button {
     align-items: flex-start;
     justify-content: flex-start;
     padding-top: 85px;
+    z-index: 3;
   }
 
   .mobile-menu-toggle {
@@ -1056,24 +1067,26 @@ main h2 {
 
 @media (min-width: 1280px) {
   .movie-grid {
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 }
 
 .movie-card {
-  height: 150px;
-  border-radius: 0.5rem;
+  height: 145px;
+  border-radius: 15px;
   overflow: hidden;
-  transition: transform 0.3s ease;
-  width: 120px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 140px;
   cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .movie-card:hover {
   transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 .movie-card:hover .movie-details h3 {
-  color: #f3f3f4;
+  color: #ff6f61;
   transition: transform 0.3s ease;
 }
 
@@ -1083,6 +1096,11 @@ main h2 {
   border-radius: 0.5rem;
 }
 
+.movie-card:hover img {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
 .movie-details {
   padding: 0.5rem;
 }
@@ -1090,7 +1108,7 @@ main h2 {
 .movie-details h3 {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #c86464;
+  color: #efefef;
 
   white-space: nowrap;
   overflow: hidden;
