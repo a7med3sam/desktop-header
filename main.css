@@ -242,7 +242,7 @@ select {
   
   .movie-details h3 {
     font-size: 1rem;
-    font-weight: 500;
+    font-weight: normal;
     color: #efefef;
   
     white-space: nowrap;
