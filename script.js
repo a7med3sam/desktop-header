@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("search-input");
   const movieGrid = document.getElementById("movie-grid");
   const channelCount = document.getElementById("channel-count");
+  const categoryFilter = document.getElementById("categoryFilter");
 
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
@@ -48,6 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
         renderMovies(filteredChannels);
         updateChannelCount(filteredChannels.length);
       });
+
+      // إضافة مستمع لتغيير الفئة
+      categoryFilter.addEventListener("change", () => {
+        const selectedCategory = categoryFilter.value;
+        let filteredChannels = channels;
+        
+        if (selectedCategory !== "all") {
+          filteredChannels = channels.filter((channel) =>
+            channel.categories.map(c => c.toLowerCase()).includes(selectedCategory.toLowerCase())
+          );
+        }
+        renderMovies(filteredChannels);
+        updateChannelCount(filteredChannels.length);
+      });
+
     })
     .catch((error) => {
       console.error("Error loading channels data:", error);
