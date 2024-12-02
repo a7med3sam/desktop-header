@@ -11,13 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const movieGrid = document.getElementById("movie-grid");
   const channelCount = document.getElementById("channel-count");
   const categoryFilter = document.getElementById("categoryFilter");
+  const suggestionsList = document.getElementById("suggestions-list");
 
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
   });
 
   closeBtnNav.addEventListener("click", () => {
-    navLinks.classList.remove("active"); // إزالة الكلاس "active" لإخفاء القائمة
+    navLinks.classList.remove("active");
   });
 
   closeBtn.addEventListener("click", () => {
@@ -39,35 +40,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
       searchInput.addEventListener("input", () => {
         const searchTerm = searchInput.value.toLowerCase();
-        const filteredChannels = channels.filter(
-          (channel) =>
-            channel.name.toLowerCase().includes(searchTerm) ||
-            channel.categories.some((category) =>
-              category.toLowerCase().includes(searchTerm)
-            )
-        );
+        const selectedCategory = categoryFilter.value;
+        const filteredChannels = filterChannels(channels, searchTerm, selectedCategory);
         renderMovies(filteredChannels);
         updateChannelCount(filteredChannels.length);
+        showSuggestions(filteredChannels, searchTerm);
       });
 
-      // إضافة مستمع لتغيير الفئة
       categoryFilter.addEventListener("change", () => {
         const selectedCategory = categoryFilter.value;
-        let filteredChannels = channels;
-        
-        if (selectedCategory !== "all") {
-          filteredChannels = channels.filter((channel) =>
-            channel.categories.map(c => c.toLowerCase()).includes(selectedCategory.toLowerCase())
-          );
-        }
+        const searchTerm = searchInput.value.toLowerCase();
+        const filteredChannels = filterChannels(channels, searchTerm, selectedCategory);
         renderMovies(filteredChannels);
         updateChannelCount(filteredChannels.length);
       });
-
     })
     .catch((error) => {
       console.error("Error loading channels data:", error);
     });
+
+  function filterChannels(channels, searchTerm, selectedCategory) {
+    return channels.filter((channel) => {
+      const matchesSearchTerm = channel.name.toLowerCase().includes(searchTerm) ||
+                                channel.categories.some(category => category.toLowerCase().includes(searchTerm));
+      const matchesCategory = selectedCategory === "all" || channel.categories.map(c => c.toLowerCase()).includes(selectedCategory.toLowerCase());
+      return matchesSearchTerm && matchesCategory;
+    });
+  }
 
   function renderMovies(channelsToRender) {
     movieGrid.innerHTML = "";
@@ -75,14 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const channelCard = document.createElement("div");
       channelCard.classList.add("movie-card");
       channelCard.innerHTML = `
-                <img src="${channel.logo}" alt="${channel.name}">
-                <div class="movie-details">
-                    <h3>${channel.name}</h3>
-                </div>
-                <div class="categories-stars">
-                <h4>${channel.categories[0]}</h4>
-                </div>
-            `;
+        <img src="${channel.logo}" alt="${channel.name}">
+        <div class="movie-details">
+          <h3>${channel.name}</h3>
+        </div>
+        <div class="categories-stars">
+          <h4>${channel.categories[0]}</h4>
+        </div>
+      `;
 
       const ratingElement = document.createElement("div");
       ratingElement.classList.add("rating");
@@ -105,5 +104,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateChannelCount(count) {
     channelCount.textContent = `Results found: ${count}`;
+  }
+
+  function showSuggestions(filteredChannels, searchTerm) {
+    suggestionsList.innerHTML = '';
+    if (searchTerm.length > 0) {
+      const filteredSuggestions = filteredChannels.slice(0, 5);
+      filteredSuggestions.forEach((channel) => {
+        const suggestionItem = document.createElement("li");
+        suggestionItem.textContent = channel.name;
+        suggestionItem.addEventListener("click", () => {
+          searchInput.value = channel.name;
+          suggestionsList.classList.add("hidden");
+          renderMovies([channel]);
+        });
+        suggestionsList.appendChild(suggestionItem);
+      });
+      suggestionsList.classList.remove("hidden");
+    } else {
+      suggestionsList.classList.add("hidden");
+    }
   }
 });

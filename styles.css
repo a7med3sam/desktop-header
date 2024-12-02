@@ -982,6 +982,72 @@ select {
 }
 
 /* suggest */
+/* Dark Mode Styling */
+body {
+  background-color: #121212;  /* Dark background */
+  color: #e0e0e0;  /* Light text color */
+  font-family: Arial, sans-serif;
+}
+
+.search-section h2 {
+  color: #ffffff;  /* White heading */
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.second-search-bar {
+  position: relative;
+  background-color: #333333; /* Dark search bar background */
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#search-input {
+  background-color: #444444; /* Dark input background */
+  color: #e0e0e0; /* Light text color inside input */
+  border: 1px solid #666666; /* Dark border */
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+#search-input::placeholder {
+  color: #aaa; /* Lighter placeholder text */
+}
+
+.fa-solid {
+  color: #e0e0e0;  /* Light search icon */
+}
+
+/* Suggestions List of search*/
+.suggestions-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 5px;
+  border: 1px solid #666666;
+  background-color: #333333;
+  max-height: 200px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.suggestions-list li {
+  padding: 10px;
+  cursor: pointer;
+  color: #e0e0e0;
+}
+
+.suggestions-list li:hover {
+  background-color: #555555;
+}
+
+.suggestions-list.hidden {
+  display: none;
+}
+
 
 
 /* main */
