@@ -28,6 +28,11 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.classList.add("hidden");
+    } else if (
+      !suggestionsList.contains(event.target) &&
+      event.target !== searchInput
+    ) {
+      suggestionsList.classList.add("hidden"); // Close suggestions if clicked outside
     }
   });
 
@@ -41,7 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
       searchInput.addEventListener("input", () => {
         const searchTerm = searchInput.value.toLowerCase();
         const selectedCategory = categoryFilter.value;
-        const filteredChannels = filterChannels(channels, searchTerm, selectedCategory);
+        const filteredChannels = filterChannels(
+          channels,
+          searchTerm,
+          selectedCategory
+        );
         renderMovies(filteredChannels);
         updateChannelCount(filteredChannels.length);
         showSuggestions(filteredChannels, searchTerm);
@@ -50,7 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
       categoryFilter.addEventListener("change", () => {
         const selectedCategory = categoryFilter.value;
         const searchTerm = searchInput.value.toLowerCase();
-        const filteredChannels = filterChannels(channels, searchTerm, selectedCategory);
+        const filteredChannels = filterChannels(
+          channels,
+          searchTerm,
+          selectedCategory
+        );
         renderMovies(filteredChannels);
         updateChannelCount(filteredChannels.length);
       });
@@ -61,9 +74,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function filterChannels(channels, searchTerm, selectedCategory) {
     return channels.filter((channel) => {
-      const matchesSearchTerm = channel.name.toLowerCase().includes(searchTerm) ||
-                                channel.categories.some(category => category.toLowerCase().includes(searchTerm));
-      const matchesCategory = selectedCategory === "all" || channel.categories.map(c => c.toLowerCase()).includes(selectedCategory.toLowerCase());
+      const matchesSearchTerm =
+        channel.name.toLowerCase().includes(searchTerm) ||
+        channel.categories.some((category) =>
+          category.toLowerCase().includes(searchTerm)
+        );
+      const matchesCategory =
+        selectedCategory === "all" ||
+        channel.categories
+          .map((c) => c.toLowerCase())
+          .includes(selectedCategory.toLowerCase());
       return matchesSearchTerm && matchesCategory;
     });
   }
@@ -78,16 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="movie-details">
           <h3>${channel.name}</h3>
         </div>
-        <div class="categories-stars">
-          <h4>${channel.categories[0]}</h4>
-        </div>
+
       `;
 
       const ratingElement = document.createElement("div");
       ratingElement.classList.add("rating");
       ratingElement.setAttribute("data-rating", 3);
 
-      channelCard.querySelector(".categories-stars").appendChild(ratingElement);
+      channelCard.querySelector(".movie-details").appendChild(ratingElement);
 
       channelCard.addEventListener("click", () => {
         modal.classList.remove("hidden");
@@ -107,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function showSuggestions(filteredChannels, searchTerm) {
-    suggestionsList.innerHTML = '';
+    suggestionsList.innerHTML = "";
     if (searchTerm.length > 0) {
       const filteredSuggestions = filteredChannels.slice(0, 5);
       filteredSuggestions.forEach((channel) => {
@@ -121,8 +139,10 @@ document.addEventListener("DOMContentLoaded", () => {
         suggestionsList.appendChild(suggestionItem);
       });
       suggestionsList.classList.remove("hidden");
+      suggestionsList.classList.add("show");
     } else {
       suggestionsList.classList.add("hidden");
+      suggestionsList.classList.remove("show");
     }
   }
 });

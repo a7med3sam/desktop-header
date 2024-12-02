@@ -945,7 +945,7 @@ header .cta-button a{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin: 3rem;
   gap: 60px;
 }
 
@@ -966,10 +966,11 @@ header .cta-button a{
   border-width: 1px;
   border-style: solid;
   border-radius: 8px;
+  
 }
 
 select {
-  /* width: 100%; */
+  width: 180px;
   padding: 12px;
   font-size: 16px;
   background-color: #333;
@@ -990,41 +991,40 @@ body {
 }
 
 .search-section h2 {
-  color: #ffffff;  /* White heading */
+  color: #ffffff;
   font-size: 24px;
-  margin-bottom: 10px;
 }
 
 .second-search-bar {
-  position: relative;
-  background-color: #333333; /* Dark search bar background */
+  position: relative; /* Ensure the container has position relative */
   padding: 10px;
   border-radius: 5px;
 }
 
 #search-input {
-  background-color: #444444; /* Dark input background */
-  color: #e0e0e0; /* Light text color inside input */
-  border: 1px solid #666666; /* Dark border */
+  background-color: #444444;
+  color: #e0e0e0;
+  border: 1px solid #666666;
   padding: 10px;
   width: 100%;
   border-radius: 5px;
+  padding-left: 30px;
 }
 
 #search-input::placeholder {
-  color: #aaa; /* Lighter placeholder text */
+  color: #aaa;
 }
 
 .fa-solid {
-  color: #e0e0e0;  /* Light search icon */
+  color: #e0e0e0;
 }
 
-/* Suggestions List of search*/
+/* Suggestions List */
 .suggestions-list {
   list-style-type: none;
   padding: 0;
-  margin-top: 5px;
-  border: 1px solid #666666;
+  /* margin-top: 5px; */
+  /* border: 1px solid #666666; */
   background-color: #333333;
   max-height: 200px;
   overflow-y: auto;
@@ -1032,7 +1032,24 @@ body {
   width: 100%;
   z-index: 1000;
   border-radius: 5px;
+  top: 48%; /* Position the suggestions below the search input */
+  left: 0;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(-10px); /* Start slightly above */
+  pointer-events: none; /* Disable interaction when hidden */
+  transition: opacity 0.3s ease, transform 0.3s ease, pointer-events 0s 0.3s;
 }
+
+.suggestions-list.show {
+  opacity: 1; /* Fade in */
+  transform: translateY(0); /* Slide down */
+  pointer-events: auto; /* Enable interaction when visible */
+}
+
+.suggestions-list.hidden {
+  display: none;
+}
+
 
 .suggestions-list li {
   padding: 10px;
@@ -1042,10 +1059,6 @@ body {
 
 .suggestions-list li:hover {
   background-color: #555555;
-}
-
-.suggestions-list.hidden {
-  display: none;
 }
 
 
@@ -1099,6 +1112,7 @@ main h2 {
 .count {
   display: flex;
   align-items: center;
+  margin-bottom: 1rem;
 }
 .count p {
   margin-left: 10px;
@@ -1131,7 +1145,7 @@ main h2 {
 
 @media (min-width: 768px) {
   .cardbg {
-    padding: 40px 80px;
+    padding: 40px 30px;
   }
 
   .movie-grid {
@@ -1156,10 +1170,12 @@ main h2 {
   border-radius: 7px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* width: 140px; */
+  width: 140px;
   cursor: pointer;
-  /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); */
-  /* background-color: #1f2937; */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  background-color: #18182a;
+  border: 0.5px solid #0d0d22c9;
+  margin-bottom: 1rem;
 }
 
 .movie-card:hover {
@@ -1207,24 +1223,8 @@ main h2 {
 
 
 /* stars and catego */
-.categories-stars {
-  display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
-    margin-bottom: 0.5rem;
-}
 
-.categories-stars h4{
-  color: #d1d5db;
-  font-size: 13px;
-  margin-bottom: 0.25rem;
-  font-weight: normal;
-  padding: 5px 4px;
-  border-radius: 20px;
-  display: inline-block;
-  background-color: #374151;
-  margin: 0;
-}
+
 
 .rating {
   color: #ff4444;
