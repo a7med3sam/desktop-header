@@ -2,9 +2,7 @@
   --bg-dark: #0f0f1b;
   --text-light: #ffffff;
   --text-muted: #9ca3af;
-  --accent-pink: #ec4899;
-  --star-active: #facc15;
-  --star-inactive: #4b5563;
+
 }
 
 body {
@@ -970,6 +968,19 @@ header .cta-button a{
   border-radius: 8px;
 }
 
+select {
+  /* width: 100%; */
+  padding: 12px;
+  font-size: 16px;
+  background-color: #333;
+  color: #f0f0f0;
+  border: 1px solid #444;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
 /* main */
 
 main h2 {
@@ -1036,7 +1047,7 @@ main h2 {
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
+  gap: 2rem;
 }
 
 @media (min-width: 576px) {
@@ -1072,13 +1083,14 @@ main h2 {
 }
 
 .movie-card {
-  height: 145px;
-  border-radius: 15px;
+  /* height: 190px; */
+  border-radius: 7px;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 140px;
+  /* width: 140px; */
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); */
+  /* background-color: #1f2937; */
 }
 
 .movie-card:hover {
@@ -1093,7 +1105,7 @@ main h2 {
 .movie-card img {
   width: 100%;
   height: 100px;
-  border-radius: 0.5rem;
+  /* border-radius: 0.5rem; */
 }
 
 .movie-card:hover img {
@@ -1106,7 +1118,7 @@ main h2 {
 }
 
 .movie-details h3 {
-  font-size: 0.875rem;
+  font-size: 1rem;
   font-weight: 500;
   color: #efefef;
 
@@ -1123,24 +1135,52 @@ main h2 {
   margin: 0.25rem 0;
 }
 
-.star-rating {
+
+
+/* stars and catego */
+.categories-stars {
   display: flex;
-  align-items: center;
-  gap: 0.25rem;
+    justify-content: space-evenly;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
 }
 
-.star {
-  width: 1rem;
-  height: 1rem;
+.categories-stars h4{
+  color: #d1d5db;
+  font-size: 13px;
+  margin-bottom: 0.25rem;
+  font-weight: normal;
+  padding: 5px 4px;
+  border-radius: 20px;
+  display: inline-block;
+  background-color: #374151;
+  margin: 0;
 }
 
-.star.active {
-  color: var(--star-active);
+.rating {
+  color: #ff4444;
+  letter-spacing: 2px;
+  font-size: 14px;
 }
 
-.star.inactive {
-  color: var(--star-inactive);
+.rating::before {
+  content: "★★★★★";
 }
+
+.rating[data-rating="3"]::before {
+  content: "★★★☆☆";
+}
+
+.rating[data-rating="4"]::before {
+  content: "★★★★☆";
+}
+
+.rating[data-rating="5"]::before {
+  content: "★★★★★";
+}
+
+/* stars and catego */
+
 
 /* Modal Styles */
 .modal-container {

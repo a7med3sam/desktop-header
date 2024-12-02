@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
-    
   });
 
   closeBtnNav.addEventListener("click", () => {
@@ -64,7 +63,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="movie-details">
                     <h3>${channel.name}</h3>
                 </div>
+                <div class="categories-stars">
+                <h4>${channel.categories[0]}</h4>
+                </div>
             `;
+
+      const ratingElement = document.createElement("div");
+      ratingElement.classList.add("rating");
+      ratingElement.setAttribute("data-rating", 3);
+
+      channelCard.querySelector(".categories-stars").appendChild(ratingElement);
+
       channelCard.addEventListener("click", () => {
         modal.classList.remove("hidden");
         modalTitle.textContent = `${channel.name}`;
