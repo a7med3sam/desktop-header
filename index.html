@@ -18,6 +18,8 @@
     href="https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@400;500;600;700;800&family=Oswald:wght@200..700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="footer.css" />
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 
@@ -413,7 +415,6 @@
 
     </div>
   </header>
-
   <!-- 3 btns -->
   <div class="button-container">
     <!-- On Demand Button -->
@@ -438,6 +439,8 @@
     <div class="container">
       <div class="search-section">
         <h2>Browse channels</h2>
+
+        <div class="second-search-parent">
         <div class="second-search-bar">
           <i class="fa-solid fa-magnifying-glass"></i>
           <input type="text" id="search-input" />
@@ -445,25 +448,29 @@
         </div>
          <!-- fiter by category -->
       <select id="categoryFilter">
+        <option value="news">News</option>
         <option value="all">All Categories</option>
         <option value="religious">Religious</option>
-        <option value="news">News</option>
         <option value="lifestyle">Lifestyle</option>
         <option value="entertainment">Entertainment</option>
         <option value="kids">Kids</option>
       </select>
       <!-- fiter by category -->
+    </div>
       </div>
 
      
 
       <div class="cardbg">
+        <div class="main-parent">
         <div class="count">
           <div class="channels">channels</div>
           <p id="channel-count"></p>
         </div>
 
         <div id="movie-grid" class="movie-grid"></div>
+      </div>
+      
       </div>
     </div>
   </main>
