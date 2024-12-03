@@ -782,7 +782,7 @@ header .cta-button a{
     width: 40%;
     white-space: nowrap;
     display: block;
-    padding: 0;
+    padding: 4px 0;
   }
   .dropdown-section a {
     font-size: 14px;
