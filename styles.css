@@ -901,7 +901,7 @@ header .cta-button a{
   }
 
   header .container {
-    padding: 0;
+    padding-bottom: 30px;
     width: 90%;
   }
 
@@ -925,7 +925,7 @@ header .cta-button a{
   }
 
   .button-container{
-    top:46px;
+    top:66px;
   }
 }
 

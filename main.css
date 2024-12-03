@@ -382,12 +382,12 @@ select {
 
     /* main */
     .cardbg {
-        padding: 10px 15px;
+        padding: 10px 0;
 
       }
 
       .movie-grid{
-        gap: 0.5rem;
+       
         margin: 0;
       }
     /* main */
