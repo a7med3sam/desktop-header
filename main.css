@@ -67,8 +67,8 @@
 
 select {
     width: 180px;
-    padding: 12px;
-    font-size: 16px;
+    padding: 12px 15px;
+    font-size: 1rem;
     background-color: #333;
     color:  #e0e0e0;
     border: 0;
@@ -330,6 +330,12 @@ select {
         font-size: 35px;
         margin-bottom: 0;
     }
+
+    select {
+      width: auto;
+      padding: 12px 15px;
+    }
+    
 }
 
 @media only screen and (max-width: 768px) {
@@ -379,6 +385,10 @@ select {
         margin-bottom: 0;
     }
 
+    select {
+      padding: 12px 2px;
+      font-size: 0.9rem;
+    }
 
     /* main */
     .cardbg {
@@ -410,7 +420,7 @@ select {
         grid-template-columns: repeat(4, 1fr);
     }
 
-    
+   
 }
 
 @media (min-width: 1024px) {
